@@ -13,7 +13,7 @@ type Store = ReturnType<typeof useAppData>
 interface Ctx { personId?: string; cardId?: string; expenseId?: string; itemId?: string; back?: SheetKind; ids?: string[] }
 type Open = (k: SheetKind, ctx?: Ctx) => void
 
-const sum = (xs: number[]) => xs.reduce((a, b) => a + b, 0)
+const sum = (xs: number[]) => Math.round((xs.reduce((a, b) => a + b, 0) + Number.EPSILON) * 100) / 100
 const CATS = ['식비', '교통', '관광', '쇼핑', '숙박', '기타']
 const ICON: Record<string, string> = { 식비: '🍽️', 교통: '🚇', 관광: '🏛️', 쇼핑: '🛍️', 숙박: '🏨', 기타: '🧾' }
 const CARD_BG = [
