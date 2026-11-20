@@ -26,6 +26,8 @@ jobs:
           unzip -q -o "trip-note 2.zip" -d /tmp/trip-note-import
           test -d /tmp/trip-note-import/trip-note
           cp -a /tmp/trip-note-import/trip-note/. .
+          # The connected GitHub App token cannot push workflow files; add pages.yml separately via the repository contents API.
+          rm -f .github/workflows/pages.yml
           rm -f "trip-note 2.zip"
 
       - name: Commit extracted project
