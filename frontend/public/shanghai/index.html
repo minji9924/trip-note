@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f5f3ee">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="상하이 여행">
+<title>상하이 여행 노트</title>
+<style>
+:root{--bg:#f5f3ee;--paper:#fffefa;--ink:#242820;--muted:#777d72;--line:#e6e3d9;--green:#526b50;--pale:#e9eee4;--orange:#bd704d}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}.app{max-width:760px;margin:auto;padding:env(safe-area-inset-top) 16px calc(32px + env(safe-area-inset-bottom))}.hero{padding:26px 4px 18px}.eyebrow{font-size:11px;letter-spacing:.16em;color:var(--green);font-weight:800}.hero h1{font-size:31px;letter-spacing:-.06em;margin:8px 0 5px}.hero p{margin:0;color:var(--muted);font-size:13px;line-height:1.6}.stay{margin-top:17px;background:#303b30;color:#fff;border-radius:17px;padding:15px 17px;display:flex;justify-content:space-between;align-items:center;gap:12px}.stay b{font-size:14px}.stay small{display:block;color:#d1d9cc;margin-top:4px;font-size:11px}.stay a{color:#fff;font-size:12px;text-decoration:none;border:1px solid #73816e;border-radius:30px;padding:8px 11px;white-space:nowrap}.flight{margin-top:9px;border:1px solid var(--line);background:var(--paper);border-radius:14px;padding:12px 14px;display:flex;justify-content:space-between;gap:10px;font-size:12px}.flight strong{font-size:13px}.flight span{color:var(--muted)}.tabs{position:sticky;top:0;z-index:5;display:grid;grid-template-columns:repeat(3,1fr);gap:7px;background:var(--bg);padding:10px 0 12px}.tab{border:1px solid var(--line);background:var(--paper);border-radius:12px;padding:11px 5px;color:var(--muted);font-weight:700;font-size:13px}.tab.active{background:var(--green);border-color:var(--green);color:white}.day-head{padding:12px 2px 15px}.day-head h2{font-size:22px;letter-spacing:-.04em;margin:0 0 5px}.day-head p{font-size:12px;color:var(--muted);margin:0}.progress{height:5px;background:#e3e1d8;border-radius:9px;margin-top:13px;overflow:hidden}.progress i{display:block;height:100%;width:0;background:var(--green);transition:width .2s}.section{margin:20px 0 8px;font-size:12px;letter-spacing:.08em;font-weight:800;color:var(--green)}.timeline{display:flex;flex-direction:column;gap:9px}.item{background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:13px;display:grid;grid-template-columns:57px 1fr;gap:10px}.time{font-size:12px;font-weight:800;color:var(--orange);padding-top:2px}.item h3{font-size:14px;margin:0 0 4px}.item p{font-size:12px;color:var(--muted);line-height:1.55;margin:0}.item .actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}.action{border:1px solid var(--line);border-radius:20px;padding:6px 9px;font-size:11px;text-decoration:none;color:var(--green);background:#fff}.check{display:flex;align-items:flex-start;gap:9px;font-size:13px;line-height:1.45;padding:10px 12px;background:var(--paper);border:1px solid var(--line);border-radius:12px;margin-bottom:7px}.check input{accent-color:var(--green);width:17px;height:17px;margin:1px 0 0;flex:none}.check input:checked+span{text-decoration:line-through;color:#92968d}.note{font-size:11px;color:var(--muted);line-height:1.6;padding:12px 13px;background:#eeece3;border-radius:12px;margin-top:12px}.day{display:none}.day.active{display:block}.footer{font-size:11px;color:var(--muted);text-align:center;padding:26px 0 8px}.reset{display:block;margin:16px auto 0;border:0;background:none;color:var(--muted);font-size:11px;text-decoration:underline}
+@media(min-width:600px){.app{padding-left:24px;padding-right:24px}.hero{padding-top:34px}.hero h1{font-size:37px}.item{grid-template-columns:70px 1fr;padding:16px}.item h3{font-size:15px}}
+</style>
+</head>
+<body>
+<main class="app">
+<header class="hero">
+<div class="eyebrow">TRIP NOTE · SHANGHAI</div>
+<h1>상하이, 먹고 걷고 구경하기</h1>
+<p>토요일부터 월요일까지 · 맛집, 디즈니랜드, 쇼핑을 담은 여행 일정</p>
+<div class="stay"><div><b>🏨 인민광장 Holiday Inn</b><small>여행 중 숙소 · 정확한 호텔 지점은 예약 정보로 확인</small></div><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Holiday+Inn+People%27s+Square+Shanghai">숙소 지도 ↗</a></div>
+<div class="flight"><div><strong>✈️ 귀국 항공편</strong><br><span>월요일 23:00 숙소 출발 → 푸동공항</span></div><div style="text-align:right"><strong>화요일 03:40</strong><br><span>PVG 출발</span></div></div>
+</header>
+<nav class="tabs" aria-label="날짜 선택">
+<button class="tab active" data-day="sat">토요일</button><button class="tab" data-day="sun">일요일</button><button class="tab" data-day="mon">월요일</button>
+</nav>
+
+<section class="day active" id="sat">
+<div class="day-head"><h2>토요일 · 상하이 시내</h2><p>늦은 아침부터 시작해서 예원과 루자쭈이 야경까지</p><div class="progress"><i></i></div></div>
+<div class="section">시간별 일정</div><div class="timeline">
+<article class="item"><div class="time">10:00</div><div><h3>느긋하게 기상 · 배달 아침</h3><p>지엔빙 또는 훈툰, 샌드위치 중 선택. 아침에 못 먹은 메뉴는 일요일로 넘기기.</p><div class="actions"><a class="action" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=煎饼+馄饨+上海">아침 메뉴 찾기 ↗</a></div></div></article>
+<article class="item"><div class="time">11:00</div><div><h3>우캉맨션 · 武康大楼</h3><p>건물 외관과 우캉루 주변 산책. 사진 촬영 및 카페 시간.</p><div class="actions"><a class="action" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=武康大楼+上海">지도 ↗</a><a class="action" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=武康大楼+上海">길찾기 ↗</a></div></div></article>
+<article class="item"><div class="time">12:30</div><div><h3>점도덕 · 点都德 점심</h3><p>목표 메뉴는 홍미창펀(红米肠粉). 우캉맨션에서 이동하기 편한 지점으로 선택.</p><div class="actions"><a class="action" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=点都德+上海">매장 찾기 ↗</a></div></div></article>
+<article class="item"><div class="time">14:00</div><div><h3>예원 · 豫园</h3><p>정원과 예원상성 주변 구경. 간식은 배부르지 않을 정도로만.</p><div class="actions"><a class="action" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=豫园+上海">지도 ↗</a><a class="action" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=豫园+上海">길찾기 ↗</a></div></div></article>
+<article class="item"><div class="time">16:30</div><div><h3>간식 · 카페 및 이동</h3><p>에그타르트, 지리우따런 치킨 감자 시즈닝, 차백도·헤이티·차지티 중 한 잔.</p></div></article>
+<article class="item"><div class="time">18:00</div><div><h3>동방명주 · 东方明珠</h3><p>루자쭈이 이동. 해질 무렵부터 야경 감상.</p><div class="actions"><a class="action" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=东方明珠+上海">지도 ↗</a></div></div></article>
+<article class="item"><div class="time">20:00</div><div><h3>저녁 · 훠궈 또는 홍쿠이지아</h3><p>훠궈와 홍쿠이지아 마라룽샤 중 당일 컨디션에 따라 하나 선택.</p><div class="actions"><a class="action" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=红盔甲+上海">홍쿠이지아 찾기 ↗</a></div></div></article>
+<article class="item"><div class="time">22:30</div><div><h3>숙소 복귀 · 야식 배달</h3><p>버터떡, 양쯔깐루(루나베리), 밀크티 디저트, 레드립스 마라반.</p><div class="actions"><a class="action" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=上海+黄油年糕+杨枝甘露">디저트 검색 ↗</a></div></div></article>
+</div>
+<div class="section">토요일 먹거리 체크</div>
+<div class="checklist">
+<label class="check"><input type="checkbox" data-id="sat-food-1"><span>지엔빙 / 훈툰 / 샌드위치 중 아침 메뉴</span></label>
+<label class="check"><input type="checkbox" data-id="sat-food-2"><span>점도덕 홍미창펀</span></label>
+<label class="check"><input type="checkbox" data-id="sat-food-3"><span>훠궈 또는 홍쿠이지아 마라룽샤</span></label>
+<label class="check"><input type="checkbox" data-id="sat-food-4"><span>버터떡 · 양쯔깐루 · 밀크티 디저트</span></label>
+<label class="check"><input type="checkbox" data-id="sat-food-5"><span>레드립스 마라반</span></label>
+</div>
+<div class="note">※ 점도덕 지점은 우캉맨션과 예원 사이의 실제 이동 동선을 보고 고르는 편이 좋아. 식당 지점과 대기 상황에 따라 점심 시간을 조정해.</div>
+</section>
+
+<section class="day" id="sun">
+<div class="day-head"><h2>일요일 · 디즈니랜드</h2><p>하루 종일 파크에서 보내고 밤에는 양꼬치와 야식</p><div class="progress"><i></i></div></div>
+<div class="section">시간별 일정</div><div class="timeline">
+<article class="item"><div class="time">07:00</div><div><h3>기상 · 배달 아침</h3><p>토요일 아침에 먹지 못한 지엔빙 또는 훈툰을 주문.</p></div></article>
+<article class="item"><div class="time">07:30</div><div><h3>디즈니랜드로 이동</h3><p>입장 대기와 보안 검색을 고려해 개장 시간보다 일찍 도착하도록 출발.</p><div class="actions"><a class="action" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=上海迪士尼度假区">디즈니랜드 길찾기 ↗</a><a class="action" target="_blank" rel="noopener" href="https://www.shanghaidisneyresort.com/">공식 사이트 ↗</a></div></div></article>
+<article class="item"><div class="time">08:30</div><div><h3>상하이 디즈니랜드 입장 목표</h3><p>인기 어트랙션 우선 이용. 실제 개장·폐장 시간은 방문일 공식 운영 캘린더 확인.</p></div></article>
+<article class="item"><div class="time">12:00</div><div><h3>점심 · 파크 안에서 해결</h3><p>어트랙션 대기시간을 보고 식사 시간 조정.</p></div></article>
+<article class="item"><div class="time">오후</div><div><h3>어트랙션 · 퍼레이드 · 간식</h3><p>에그타르트 등 먹고 싶은 간식과 음료를 파크 상황에 맞춰 즐기기.</p></div></article>
+<article class="item"><div class="time">20:30</div><div><h3>폐장 및 퇴장 목표</h3><p>실제 폐장 시간과 야간 쇼 시간은 당일 운영표 확인.</p></div></article>
+<article class="item"><div class="time">21:00</div><div><h3>헌지우이치엔 양꼬치 · 很久以前</h3><p>디즈니랜드에서 이동 후 늦은 저녁. 방문 지점과 라스트오더 확인.</p><div class="actions"><a class="action" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=很久以前羊肉串+上海">매장 찾기 ↗</a></div></div></article>
+<article class="item"><div class="time">22:30~</div><div><h3>숙소 복귀 · 꼭 먹을 야식</h3><p>원기윤교 마라땅콩 게살만두를 최우선. 대호춘 성젠바오 또는 꼬치도 함께 고려.</p><div class="actions"><a class="action" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=元气云饺+上海">원기윤교 찾기 ↗</a><a class="action" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=大壶春+生煎+上海">대호춘 찾기 ↗</a></div></div></article>
+</div>
+<div class="section">일요일 먹거리 체크</div>
+<label class="check"><input type="checkbox" data-id="sun-food-1"><span>남은 아침 메뉴 배달</span></label>
+<label class="check"><input type="checkbox" data-id="sun-food-2"><span>디즈니랜드 점심과 간식</span></label>
+<label class="check"><input type="checkbox" data-id="sun-food-3"><span>헌지우이치엔 양꼬치</span></label>
+<label class="check"><input type="checkbox" data-id="sun-food-4"><span>원기윤교 마라땅콩 게살만두 (필수)</span></label>
+<label class="check"><input type="checkbox" data-id="sun-food-5"><span>대호춘 성젠바오 또는 꼬치</span></label>
+<div class="note">※ 디즈니랜드는 방문일에 따라 운영시간이 달라질 수 있어. 20:30 폐장을 확정 정보로 보지 말고 공식 앱/사이트에서 확인해.</div>
+</section>
+
+<section class="day" id="mon">
+<div class="day-head"><h2>월요일 · 시내 쇼핑 & 마지막 만찬</h2><p>귀국 전날 마지막 하루. 23:00 숙소에서 푸동공항 출발</p><div class="progress"><i></i></div></div>
+<div class="section">시간별 일정</div><div class="timeline">
+<article class="item"><div class="time">09:30</div><div><h3>아침 식사</h3><p>먹고 싶은 메뉴로 여유 있게 시작.</p></div></article>
+<article class="item"><div class="time">10:30</div><div><h3>신천지 · 新天地</h3><p>거리 산책과 사진 촬영.</p><div class="actions"><a class="action" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=上海新天地">지도 ↗</a></div></div></article>
+<article class="item"><div class="time">11:30</div><div><h3>대한민국 임시정부 유적지</h3><p>관람 가능 시간과 입장 조건 확인 후 방문.</p><div class="actions"><a class="action" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=大韩民国临时政府旧址+上海">지도 ↗</a></div></div></article>
+<article class="item"><div class="time">12:30</div><div><h3>점심 · 리바이셰 게살국수</h3><p>우선순위 1. 못 먹으면 베이징덕으로 대체하는 안.</p><div class="actions"><a class="action" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=蟹黄面+上海+Li+Bai+Xie">매장 찾기 ↗</a></div></div></article>
+<article class="item"><div class="time">13:30</div><div><h3>라오지스 홍소육 · 老吉士</h3><p>홍소육을 먹고 싶다면 점심에 함께 배치. 식사량이 많으면 베이징덕과는 택1.</p><div class="actions"><a class="action" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=老吉士+上海">매장 찾기 ↗</a></div></div></article>
+<article class="item"><div class="time">14:30</div><div><h3>관샤 · To Summer / 观夏</h3><p>향수 및 라이프스타일 제품 구경. 방문할 지점의 위치와 영업시간 확인.</p><div class="actions"><a class="action" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=观夏+上海">매장 찾기 ↗</a></div></div></article>
+<article class="item"><div class="time">15:30</div><div><h3>차향사</h3><p>원하는 매장 지점 확인 후 방문.</p><div class="actions"><a class="action" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=茶香师+上海">매장 찾기 ↗</a></div></div></article>
+<article class="item"><div class="time">16:30</div><div><h3>치이카와 랜드 · MINISO LAND</h3><p>난징동루 쇼핑 구간. 두 매장 위치를 확인하고 함께 방문.</p><div class="actions"><a class="action" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Chiikawa+Store+南京东路+上海">치이카와 지도 ↗</a><a class="action" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=MINISO+LAND+南京东路+上海">MINISO 지도 ↗</a></div></div></article>
+<article class="item"><div class="time">18:00</div><div><h3>따룬파 마트 · 大润发</h3><p>기념품과 간식 쇼핑. 숙소 근처 또는 이동 동선에 맞는 지점 선택.</p><div class="actions"><a class="action" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=大润发+上海">매장 찾기 ↗</a></div></div></article>
+<article class="item"><div class="time">19:00</div><div><h3>마지막 만찬 · 김해울이 선택</h3><p>여행 마지막 저녁. 식사 후 숙소로 돌아가 짐 정리.</p></div></article>
+<article class="item"><div class="time">21:00</div><div><h3>숙소 복귀 · 짐 정리</h3><p>체크아웃 및 짐 보관 계획 확인. 호텔 체크아웃 시간이 지났다면 짐 보관 또는 레이트 체크아웃 사전 문의.</p></div></article>
+<article class="item"><div class="time">23:00</div><div><h3>푸동공항(PVG)으로 출발</h3><p>택시 이동 목표. 교통 상황을 고려해 출발 전 차량 호출 및 터미널 확인.</p><div class="actions"><a class="action" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Shanghai+Pudong+International+Airport">공항 길찾기 ↗</a></div></div></article>
+</div>
+<div class="section">월요일 쇼핑 체크</div>
+<label class="check"><input type="checkbox" data-id="mon-shop-1"><span>관샤 To Summer</span></label>
+<label class="check"><input type="checkbox" data-id="mon-shop-2"><span>차향사</span></label>
+<label class="check"><input type="checkbox" data-id="mon-shop-3"><span>치이카와 랜드</span></label>
+<label class="check"><input type="checkbox" data-id="mon-shop-4"><span>MINISO LAND</span></label>
+<label class="check"><input type="checkbox" data-id="mon-shop-5"><span>따룬파 마트</span></label>
+<div class="section">귀국 전 확인</div>
+<label class="check"><input type="checkbox" data-id="mon-flight-1"><span>호텔 짐 보관 또는 레이트 체크아웃 확인</span></label>
+<label class="check"><input type="checkbox" data-id="mon-flight-2"><span>항공사 터미널 및 체크인 마감 확인</span></label>
+<label class="check"><input type="checkbox" data-id="mon-flight-3"><span>여권 · 항공권 · 보조배터리 확인</span></label>
+<div class="note">※ 23:00 출발은 현재 계획한 시간이며, 푸동공항 국제선 체크인 마감과 항공사 안내에 맞춰 조정해. 마지막 날 호텔 객실을 밤까지 이용하려면 레이트 체크아웃 비용/가능 여부를 미리 확인해야 해.</div>
+</section>
+
+<div class="footer">체크한 항목은 이 기기의 브라우저에 자동 저장돼요.<br>상하이 현지 운영시간·매장 지점은 방문 직전에 다시 확인하세요.</div>
+<button class="reset" id="reset">체크 상태 초기화</button>
+</main>
+<script>
+const tabs=[...document.querySelectorAll('.tab')],days=[...document.querySelectorAll('.day')];
+function show(id){tabs.forEach(t=>t.classList.toggle('active',t.dataset.day===id));days.forEach(d=>d.classList.toggle('active',d.id===id));history.replaceState(null,'','#'+id);window.scrollTo({top:0,behavior:'smooth'});}
+tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.day)));
+const KEY='shanghai-trip-checks-v1';
+let saved={};try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')}catch{}
+document.querySelectorAll('input[data-id]').forEach(input=>{input.checked=!!saved[input.dataset.id];input.addEventListener('change',()=>{saved[input.dataset.id]=input.checked;localStorage.setItem(KEY,JSON.stringify(saved));updateProgress()})});
+function updateProgress(){days.forEach(day=>{const boxes=[...day.querySelectorAll('input[data-id]')];const done=boxes.filter(x=>x.checked).length;const bar=day.querySelector('.progress i');if(bar)bar.style.width=(boxes.length?done/boxes.length*100:0)+'%';});}
+document.getElementById('reset').addEventListener('click',()=>{if(!confirm('모든 체크 상태를 초기화할까요?'))return;saved={};localStorage.removeItem(KEY);document.querySelectorAll('input[data-id]').forEach(x=>x.checked=false);updateProgress()});
+updateProgress();const initial=location.hash.replace('#','');if(['sat','sun','mon'].includes(initial))show(initial);
+</script>
+</body>
+</html>
