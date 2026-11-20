@@ -4,4 +4,8 @@ export const fmt = (n: number, cur: string) =>
   /^[¥$€£₩]$/.test(cur) ? `${cur} ${n.toLocaleString('ko-KR')}` : `${n.toLocaleString('ko-KR')}${cur}`
 export const dot = (d: string) => d.replace(/-/g, '.')
 export const md = (d: string) => d.slice(5).replace('-', '.')
-export const toNum = (s: string) => (s.trim() === '' ? 0 : Math.round(Number(s.replace(/,/g, ''))) || 0)
+export const toNum = (s: string) => {
+  if (s.trim() === '') return 0
+  const n = Number(s.replace(/,/g, ''))
+  return Number.isFinite(n) ? Math.round((n + Number.EPSILON) * 100) / 100 : 0
+}
