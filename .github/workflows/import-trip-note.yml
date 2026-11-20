@@ -38,3 +38,5 @@ jobs:
             git commit -m "Import trip-note project from ZIP"
             git push origin HEAD:main
           fi
+
+# Trigger extraction after the workflow has been installed on the default branch.
