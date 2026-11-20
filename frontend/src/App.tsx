@@ -476,7 +476,7 @@ function RechargeForm({ s, personId: p0, cardId: c0, done }: { s: Store; personI
           {d.persons.map(p => <option key={p.id} value={p.id}>{p.name}</option>)}
         </select></label>
       <label className="f">충전 금액 ({d.travel.currency})
-        <input inputMode="numeric" value={amount} onChange={e => setAmount(e.target.value)} placeholder="0" autoFocus /></label>
+        <input inputMode="decimal" value={amount} onChange={e => setAmount(e.target.value)} placeholder="0" autoFocus /></label>
       <label className="f">날짜<input type="date" value={date} onChange={e => setDate(e.target.value)} /></label>
       <button className="btn" style={{ width: '100%', marginTop: 16 }} disabled={toNum(amount) <= 0 || !cardId}
         onClick={() => { s.addRecharge(personId, cardId, toNum(amount), date); done() }}>충전 기록 저장</button>
@@ -496,14 +496,16 @@ function ExpenseForm({ s, editId, done }: { s: Store; editId?: string; done: () 
     Object.fromEntries(d.shares.filter(x => x.expenseId === editId).map(x => [x.personId, String(x.amount)])))
   const t = toNum(total)
   const assigned = sum(d.persons.map(p => toNum(shares[p.id] ?? '')))
-  const diff = t - assigned
+  const diff = Math.round((t - assigned) * 100) / 100
   const valid = title.trim() !== '' && t > 0 && cardId !== '' && diff === 0
   const split = () => {
     const ids = d.persons.filter(p => (shares[p.id] ?? '') !== '').map(p => p.id)
     const targets = ids.length ? ids : d.persons.map(p => p.id)
-    const base = Math.floor(t / targets.length)
+    const cents = Math.round(t * 100)
+    const base = Math.floor(cents / targets.length)
+    const remainder = cents - base * targets.length
     const next: Record<string, string> = {}
-    targets.forEach((id, i) => { next[id] = String(base + (i === 0 ? t - base * targets.length : 0)) })
+    targets.forEach((id, i) => { next[id] = ((base + (i === 0 ? remainder : 0)) / 100).toFixed(2) })
     setShares(next)
   }
   const save = () => {
@@ -521,7 +523,7 @@ function ExpenseForm({ s, editId, done }: { s: Store; editId?: string; done: () 
         <select value={category} onChange={e => setCategory(e.target.value)}>
           {CATS.map(c => <option key={c}>{c}</option>)}
         </select></label>
-      <label className="f">사용 금액 ({cur})<input inputMode="numeric" value={total} onChange={e => setTotal(e.target.value)} placeholder="0" /></label>
+      <label className="f">사용 금액 ({cur})<input inputMode="decimal" value={total} onChange={e => setTotal(e.target.value)} placeholder="0" /></label>
       <label className="f">결제 카드
         <select value={cardId} onChange={e => setCardId(e.target.value)}>
           {d.cards.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
@@ -532,7 +534,7 @@ function ExpenseForm({ s, editId, done }: { s: Store; editId?: string; done: () 
       {d.persons.map(p => (
         <div className="sharerow" key={p.id}>
           <span>{p.name}</span>
-          <input inputMode="numeric" placeholder="0" value={shares[p.id] ?? ''} onChange={e => setShares({ ...shares, [p.id]: e.target.value })} />
+          <input inputMode="decimal" placeholder="0" value={shares[p.id] ?? ''} onChange={e => setShares({ ...shares, [p.id]: e.target.value })} />
         </div>
       ))}
       <button className="btn ghost small" style={{ marginTop: 10 }} onClick={split} disabled={t <= 0}>균등 분할</button>
